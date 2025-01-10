@@ -1,6 +1,8 @@
 services:
   octoprint:
     image: octoprint/octoprint
+    platform: linux/arm/v7
+
     restart: unless-stopped
     ports:
       - 80:80
@@ -12,8 +14,8 @@ services:
      - octoprint:/octoprint
     # uncomment the lines below to ensure camera streaming is enabled when
     # you add a video device
-    environment:
-     - ENABLE_MJPG_STREAMER=true
+    # environment:
+    # - ENABLE_MJPG_STREAMER=true
   
 volumes:
   octoprint:
